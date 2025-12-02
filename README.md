@@ -134,18 +134,59 @@ npm run build
 
 Los archivos optimizados se generan en la carpeta `dist/`.
 
-### Despliegue en Vercel/Netlify
+### Despliegue en Netlify
 
-1. Conecta tu repositorio
-2. Configura el build command: `npm run build`
-3. Configura el output directory: `dist`
-4. Deploy automático en cada push
+#### Opción 1: Deploy Automático desde Git (Recomendado)
+
+1. **Preparar el repositorio:**
+   ```bash
+   git init
+   git add .
+   git commit -m "Initial commit"
+   git remote add origin <tu-repositorio>
+   git push -u origin main
+   ```
+
+2. **En Netlify:**
+   - Ve a [netlify.com](https://www.netlify.com) y crea una cuenta
+   - Click en "Add new site" → "Import an existing project"
+   - Conecta tu repositorio (GitHub, GitLab o Bitbucket)
+   - Netlify detectará automáticamente la configuración desde `netlify.toml`
+   - Build command: `npm run build` (ya configurado)
+   - Publish directory: `dist` (ya configurado)
+   - Click en "Deploy site"
+
+3. **Configurar dominio personalizado (opcional):**
+   - En Netlify: Site settings → Domain management
+   - Agrega tu dominio `seguimientoambiental.cl`
+   - Sigue las instrucciones para configurar DNS
+
+#### Opción 2: Deploy Manual (Drag & Drop)
+
+1. **Generar build local:**
+   ```bash
+   npm run build
+   ```
+
+2. **En Netlify:**
+   - Ve a [netlify.com](https://www.netlify.com)
+   - Arrastra la carpeta `dist` a la zona de deploy
+   - ¡Listo! Tu sitio estará en línea
+
+#### Configuración Automática
+
+El archivo `netlify.toml` ya está configurado con:
+- Build command: `npm run build`
+- Publish directory: `dist`
+- Redirects para SPA (Single Page Application)
+- Node version: 18
 
 ## 📝 Notas
 
 - El formulario de contacto requiere backend para funcionar completamente
 - Los enlaces sociales y algunos enlaces del footer están como placeholders
-- Las estadísticas y datos de benchmarking pueden ajustarse según datos reales
+- Las estadísticas pueden ajustarse según datos reales
+- **La página está lista para desplegar en Netlify** - Ver `NETLIFY-DEPLOY.md` para instrucciones detalladas
 
 ## 📬 Contacto
 
