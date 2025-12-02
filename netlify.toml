@@ -2,6 +2,7 @@
   command = "npm run build"
   publish = "dist"
 
+# Redirects para SPA (Single Page Application)
 [[redirects]]
   from = "/*"
   to = "/index.html"
@@ -9,4 +10,13 @@
 
 [build.environment]
   NODE_VERSION = "18"
+
+# Headers para mejor rendimiento
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
 
