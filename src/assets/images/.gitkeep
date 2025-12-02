@@ -1,0 +1,4 @@
+# Esta carpeta contiene imágenes que se importan en componentes React
+# Ejemplo: import logo from '@/assets/images/logo.png'
+# Las imágenes aquí son procesadas por Vite durante el build
+

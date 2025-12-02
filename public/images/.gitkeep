@@ -1,0 +1,4 @@
+# Esta carpeta contiene imágenes estáticas del sitio
+# Las imágenes aquí pueden ser referenciadas directamente desde HTML/CSS
+# Ejemplo: <img src="/images/logo.png" />
+
