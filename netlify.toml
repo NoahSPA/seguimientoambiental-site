@@ -1,7 +1,8 @@
 [build]
   command = "npm run build"
-  publish = "dist"
+  publish = "out"
 
+# Next.js genera sitio estático en carpeta 'out'
 # Redirects para SPA (Single Page Application)
 [[redirects]]
   from = "/*"

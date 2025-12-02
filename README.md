@@ -13,8 +13,8 @@ Landing page profesional para **seguimientoambiental.cl**, una plataforma de mon
 
 ## 📦 Tecnologías
 
-- **React 18**: Framework de UI
-- **Vite**: Build tool y dev server
+- **Next.js 14**: Framework React con App Router
+- **React 18**: Biblioteca de UI
 - **Tailwind CSS**: Estilos utility-first
 - **Lucide React**: Iconos modernos
 - **PostCSS & Autoprefixer**: Procesamiento de CSS
@@ -42,30 +42,33 @@ npm run dev
 
 ### Scripts Disponibles
 
-- `npm run dev`: Inicia el servidor de desarrollo
-- `npm run build`: Genera la build de producción
-- `npm run preview`: Previsualiza la build de producción
+- `npm run dev`: Inicia el servidor de desarrollo (http://localhost:3000)
+- `npm run build`: Genera el sitio estático en la carpeta `out/`
+- `npm start`: Inicia el servidor de producción (requiere build previo)
 - `npm run lint`: Ejecuta el linter de ESLint
 
 ## 📁 Estructura del Proyecto
 
 ```
 seguimientoambiental-site/
-├── src/
-│   ├── components/
-│   │   ├── Header.jsx          # Navegación principal
-│   │   ├── Hero.jsx             # Sección hero principal
-│   │   ├── Features.jsx         # Características de la plataforma
-│   │   ├── Benchmarking.jsx     # Comparativa con competidores
-│   │   ├── CTA.jsx              # Call to action y formulario
-│   │   └── Footer.jsx           # Pie de página
-│   ├── App.jsx                  # Componente principal
-│   ├── main.jsx                 # Punto de entrada
-│   └── index.css                # Estilos globales
-├── index.html                   # HTML base
-├── tailwind.config.js           # Configuración de Tailwind
-├── vite.config.js               # Configuración de Vite
-└── package.json                 # Dependencias del proyecto
+├── app/
+│   ├── layout.js                # Layout principal con metadata
+│   ├── page.js                  # Página principal
+│   └── globals.css              # Estilos globales
+├── components/
+│   ├── Header.jsx               # Navegación principal
+│   ├── Hero.jsx                 # Sección hero principal
+│   ├── Features.jsx             # Servicios de la plataforma
+│   ├── CTA.jsx                  # Call to action y formulario
+│   └── Footer.jsx               # Pie de página
+├── public/
+│   ├── images/                  # Imágenes estáticas
+│   ├── logo.png                 # Logo principal
+│   └── isotipo.png              # Isotipo
+├── next.config.js                # Configuración de Next.js
+├── tailwind.config.js            # Configuración de Tailwind
+├── netlify.toml                  # Configuración de Netlify
+└── package.json                  # Dependencias del proyecto
 ```
 
 ## 🎨 Paleta de Colores
@@ -132,7 +135,7 @@ Todos los textos están directamente en los componentes. Busca y reemplaza segú
 npm run build
 ```
 
-Los archivos optimizados se generan en la carpeta `dist/`.
+Los archivos optimizados se generan en la carpeta `out/` (sitio estático).
 
 ### Despliegue en Netlify
 
@@ -140,11 +143,9 @@ Los archivos optimizados se generan en la carpeta `dist/`.
 
 1. **Preparar el repositorio:**
    ```bash
-   git init
    git add .
-   git commit -m "Initial commit"
-   git remote add origin <tu-repositorio>
-   git push -u origin main
+   git commit -m "Next.js migration"
+   git push
    ```
 
 2. **En Netlify:**
@@ -153,7 +154,7 @@ Los archivos optimizados se generan en la carpeta `dist/`.
    - Conecta tu repositorio (GitHub, GitLab o Bitbucket)
    - Netlify detectará automáticamente la configuración desde `netlify.toml`
    - Build command: `npm run build` (ya configurado)
-   - Publish directory: `dist` (ya configurado)
+   - Publish directory: `out` (ya configurado)
    - Click en "Deploy site"
 
 3. **Configurar dominio personalizado (opcional):**
@@ -170,16 +171,18 @@ Los archivos optimizados se generan en la carpeta `dist/`.
 
 2. **En Netlify:**
    - Ve a [netlify.com](https://www.netlify.com)
-   - Arrastra la carpeta `dist` a la zona de deploy
+   - Arrastra la carpeta `out` a la zona de deploy
    - ¡Listo! Tu sitio estará en línea
 
 #### Configuración Automática
 
 El archivo `netlify.toml` ya está configurado con:
 - Build command: `npm run build`
-- Publish directory: `dist`
+- Publish directory: `out` (Next.js export)
 - Redirects para SPA (Single Page Application)
 - Node version: 18
+
+**Ver `NEXTJS-DEPLOY.md` para instrucciones detalladas.**
 
 ## 📝 Notas
 
