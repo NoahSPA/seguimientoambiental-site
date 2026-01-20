@@ -25,6 +25,7 @@ const Footer = () => {
       { label: 'Cookies', href: '#' },
     ],
   }
+  
 
   return (
     <footer className="bg-neutral-900 text-neutral-300">
