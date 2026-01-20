@@ -27,7 +27,7 @@ const Features = () => {
       icon: Shield,
       title: 'Seguimiento y Cumplimiento Ambiental',
       description:
-        'Acompañamiento continuo para el cumplimiento de condicionantes RCA. Monitoreo de obligaciones ambientales y preparación para fiscalizaciones de la SMA.',
+        'Acompañamiento continuo para el cumplimiento de condicionantes RCA. Seguimiento y cumplimiento ambiental de la Superintendencia del Medio Ambiente (SMA) y de los organismos con competencia ambiental.',
       color: 'bg-accent-600',
     },
     {
@@ -35,20 +35,6 @@ const Features = () => {
       title: 'Monitoreo Ambiental',
       description:
         'Monitoreo de calidad de aire, agua, ruido, olores y biodiversidad. Diseño e implementación de programas de monitoreo según normativa vigente.',
-      color: 'bg-primary-600',
-    },
-    {
-      icon: Zap,
-      title: 'Auditorías Ambientales',
-      description:
-        'Auditorías internas y externas para verificar cumplimiento normativo. Evaluación de brechas regulatorias y preparación para fiscalizaciones.',
-      color: 'bg-accent-600',
-    },
-    {
-      icon: Globe,
-      title: 'Líneas de Base Ambientales',
-      description:
-        'Caracterización ambiental de sitios y áreas de influencia. Estudios de biodiversidad, calidad ambiental y análisis geoespacial.',
       color: 'bg-primary-600',
     },
     {
@@ -69,7 +55,7 @@ const Features = () => {
       icon: Users,
       title: 'Asesoría Legal Ambiental',
       description:
-        'Asesoría en interpretación normativa, defensa ante la SMA, litigación ambiental y políticas de compliance. Representación ante autoridades ambientales.',
+        'Asesoría para el cumplimiento normativo, defensa y apoyo legal ambiental.',
       color: 'bg-accent-600',
     },
     {
@@ -100,6 +86,36 @@ const Features = () => {
         'Programas de capacitación en gestión ambiental, normativa vigente y mejores prácticas. Consultoría estratégica para políticas de sostenibilidad.',
       color: 'bg-accent-600',
     },
+    {
+      icon: Zap,
+      title: 'Implementación de estándares ISO 9001 / 14001 e Ingeniería',
+      description:
+        'Aseguramiento y control de calidad (QA/QC) en procesos constructivos y operacionales, incluyendo el seguimiento técnico de la calidad y la ingeniería asociada, con el objetivo de garantizar el cumplimiento normativo, los estándares técnicos y los requisitos de calidad establecidos.',
+      color: 'bg-primary-600',
+    },
+  ]
+
+  const engineeringBlocks = [
+    {
+      title: 'Formulación Inicial de Proyecto (Ingeniería Conceptual)',
+      description:
+        'Análisis de requerimientos, definición de alcances técnicos, evaluación de alternativas y criterios de diseño.',
+    },
+    {
+      title: 'Ingeniería Básica',
+      description:
+        'Diagramas, trazados, memorias descriptivas y especificaciones técnicas para evaluar factibilidad técnica, ambiental y económica.',
+    },
+    {
+      title: 'Ingeniería de Detalle',
+      description:
+        'Planos constructivos, cubicaciones, memorias de cálculo, listas de materiales y documentación técnica para ejecución en terreno.',
+    },
+    {
+      title: 'Soporte Constructivo',
+      description:
+        'Asistencia técnica durante la ejecución, resolución de interferencias, validación de cambios y control de cumplimiento del diseño.',
+    },
   ]
 
   return (
@@ -116,9 +132,8 @@ const Features = () => {
               Servicios
             </span>
           </h2>
-          <p className="text-lg text-neutral-600">
-            Ofrecemos una gama completa de servicios profesionales para el seguimiento,
-            monitoreo y cumplimiento ambiental en Chile
+          <p className="text-lg text-neutral-600 font-medium">
+            Ofrecemos una gama completa de servicios profesionales para el seguimiento, monitoreo y cumplimiento ambiental en Chile.
           </p>
         </div>
 
@@ -160,6 +175,28 @@ const Features = () => {
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Desarrollo de Proyectos de Ingeniería */}
+        <div className="mt-16">
+          <h3 className="text-2xl sm:text-3xl font-bold text-neutral-900 mb-6 text-center">
+            Desarrollo de Proyectos de Ingeniería
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {engineeringBlocks.map((block, index) => (
+              <div
+                key={index}
+                className="p-6 bg-neutral-50 rounded-xl border border-neutral-200"
+              >
+                <h4 className="text-lg font-semibold text-neutral-900 mb-2">
+                  {block.title}
+                </h4>
+                <p className="text-neutral-600 leading-relaxed text-sm">
+                  {block.description}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
 
         {/* Image Gallery Section */}

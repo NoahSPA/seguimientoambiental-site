@@ -40,10 +40,15 @@ const Footer = () => {
               />
             </a>
             <p className="text-neutral-400 mb-6 max-w-md">
-              Servicios profesionales líderes en Chile para monitoreo, seguimiento y
-              cumplimiento ambiental. Consultoría especializada y acompañamiento
-              integral para tu proyecto.
+              Servicios profesionales de consultoría y acompañamiento para el seguimiento y cumplimiento ambiental.
+              Garantizamos el cumplimiento normativo a través de expertos en materias ambientales, constructivas y operacionales.
             </p>
+            <a
+              href="https://www.seguimientoambiental.cl"
+              className="inline-flex items-center text-neutral-400 hover:text-white transition-colors mb-6"
+            >
+              www.seguimientoambiental.cl
+            </a>
             <div className="flex flex-col space-y-3">
               <a
                 href="mailto:contacto@seguimientoambiental.cl"

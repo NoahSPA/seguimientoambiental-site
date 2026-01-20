@@ -10,7 +10,6 @@ const Hero = () => {
   const benefits = [
     'Monitoreo en tiempo real',
     'Cumplimiento normativo garantizado',
-    'Tecnología de última generación',
   ]
 
   const stats = [
@@ -32,26 +31,23 @@ const Hero = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Content Column */}
           <div className="text-center lg:text-left animate-fade-in">
-          {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary-100 text-primary-700 rounded-full text-sm font-semibold mb-6 animate-slide-up">
-            <span className="w-2 h-2 bg-primary-600 rounded-full animate-pulse" />
-            Solución líder en Chile
-          </div>
-
           {/* Main Heading */}
           <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-neutral-900 mb-6 text-balance animate-slide-up">
-            Seguimiento Ambiental
-            <span className="block bg-gradient-to-r from-primary-600 to-accent-600 bg-clip-text text-transparent">
-              Inteligente y Confiable
+            Seguimiento Ambiental{' '}
+            <span className="bg-gradient-to-r from-primary-600 to-accent-600 bg-clip-text text-transparent">
+              Multidisciplinario
             </span>
           </h1>
 
           {/* Subheading */}
-          <p className="text-lg sm:text-xl lg:text-2xl text-neutral-600 mb-8 max-w-2xl mx-auto text-balance animate-slide-up">
-            Servicios profesionales de consultoría y acompañamiento para monitoreo, seguimiento y
-            cumplimiento ambiental. Garantizamos el cumplimiento normativo con
-            metodologías probadas y experiencia en el mercado chileno.
-          </p>
+          <div className="mb-8 max-w-2xl mx-auto text-balance animate-slide-up">
+            <p className="text-lg sm:text-xl lg:text-2xl text-neutral-600">
+              Servicios profesionales de consultoría y acompañamiento para el seguimiento y cumplimiento ambiental.
+            </p>
+            <p className="text-lg sm:text-xl lg:text-2xl text-neutral-600 mt-3">
+              Garantizamos el cumplimiento normativo a través de expertos en materias ambientales, constructivas y operacionales.
+            </p>
+          </div>
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12 animate-slide-up">
