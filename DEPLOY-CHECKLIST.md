@@ -22,7 +22,7 @@
 
 ### 🎨 Estilos
 - [x] Tailwind CSS configurado
-- [x] Colores personalizados (#00517A y #F97E3D)
+- [x] Colores personalizados (#325675 y #9ec248)
 - [x] Responsive design implementado
 - [x] Animaciones y transiciones
 

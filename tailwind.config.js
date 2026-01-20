@@ -1,4 +1,52 @@
 /** @type {import('tailwindcss').Config} */
+const hexToRgb = (hex) => {
+  const normalized = hex.replace('#', '').trim()
+  const full = normalized.length === 3
+    ? normalized.split('').map((c) => c + c).join('')
+    : normalized
+
+  const intVal = parseInt(full, 16)
+  return {
+    r: (intVal >> 16) & 255,
+    g: (intVal >> 8) & 255,
+    b: intVal & 255,
+  }
+}
+
+const clamp255 = (n) => Math.max(0, Math.min(255, Math.round(n)))
+
+const rgbToHex = ({ r, g, b }) => {
+  const toHex = (n) => clamp255(n).toString(16).padStart(2, '0')
+  return `#${toHex(r)}${toHex(g)}${toHex(b)}`
+}
+
+// weight = proporción de `toHex` (0..1)
+const mixHex = (fromHex, toHex, weight) => {
+  const from = hexToRgb(fromHex)
+  const to = hexToRgb(toHex)
+  const w = Math.max(0, Math.min(1, weight))
+  return rgbToHex({
+    r: from.r + (to.r - from.r) * w,
+    g: from.g + (to.g - from.g) * w,
+    b: from.b + (to.b - from.b) * w,
+  })
+}
+
+// Genera una escala 50..950 manteniendo el color base en 600
+const scaleFrom600 = (base600) => ({
+  50: mixHex(base600, '#ffffff', 0.9),
+  100: mixHex(base600, '#ffffff', 0.8),
+  200: mixHex(base600, '#ffffff', 0.65),
+  300: mixHex(base600, '#ffffff', 0.5),
+  400: mixHex(base600, '#ffffff', 0.35),
+  500: mixHex(base600, '#ffffff', 0.2),
+  600: base600,
+  700: mixHex(base600, '#000000', 0.15),
+  800: mixHex(base600, '#000000', 0.3),
+  900: mixHex(base600, '#000000', 0.45),
+  950: mixHex(base600, '#000000', 0.6),
+})
+
 module.exports = {
   content: [
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
@@ -9,34 +57,10 @@ module.exports = {
     extend: {
       colors: {
         // Paleta de colores basada en el logo
-        // Primario: #00517A (azul oscuro)
-        // Secundario: #F97E3D (naranja)
-        primary: {
-          50: '#e6f2f7',
-          100: '#cce5ef',
-          200: '#99cbd9',
-          300: '#66b1c3',
-          400: '#3397ad',
-          500: '#00517A',
-          600: '#004166',
-          700: '#003152',
-          800: '#00213d',
-          900: '#001129',
-          950: '#000814',
-        },
-        accent: {
-          50: '#fef4f0',
-          100: '#fde9e1',
-          200: '#fbd3c3',
-          300: '#f9bda5',
-          400: '#f7a787',
-          500: '#F97E3D',
-          600: '#c76531',
-          700: '#954c25',
-          800: '#643218',
-          900: '#32190c',
-          950: '#190c06',
-        },
+        // Primario: #325675
+        // Secundario: #9ec248
+        primary: scaleFrom600('#325675'),
+        accent: scaleFrom600('#9ec248'),
         neutral: {
           50: '#f8fafc',
           100: '#f1f5f9',
