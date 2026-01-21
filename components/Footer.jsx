@@ -67,11 +67,11 @@ const Footer = () => {
             <h4 className="text-primary-600 font-semibold mb-4">Contacto</h4>
             <div className="flex flex-col space-y-3">
               <a
-                href="mailto:milenkaperezm@gmail.com"
+                href="mailto:mirellamarin@gmail.com"
                 className="flex items-center gap-2 text-neutral-400 hover:text-white transition-colors"
               >
                 <Mail className="w-4 h-4" />
-                milenkaperezm@gmail.com
+                mirellamarin@gmail.com
               </a>
               <a
                 href="tel:+56990826131"
