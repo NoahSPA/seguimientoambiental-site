@@ -1,6 +1,6 @@
 'use client'
 
-import { Mail, Phone, MapPin, Linkedin, Twitter } from 'lucide-react'
+import { Mail, Phone, MapPin } from 'lucide-react'
 
 /**
  * Componente Footer - Pie de página con información de contacto
@@ -26,6 +26,11 @@ const Footer = () => {
     ],
   }
   
+
+  const hasReference = (link) => link?.href && link.href !== '#'
+  const productLinks = footerLinks.producto.filter(hasReference)
+  const companyLinks = footerLinks.empresa.filter(hasReference)
+  const legalLinks = footerLinks.legal.filter(hasReference)
 
   return (
     <footer className="bg-neutral-900 text-neutral-300">
@@ -73,55 +78,61 @@ const Footer = () => {
           </div>
 
           {/* Product Links */}
-          <div>
-            <h4 className="text-primary-600 font-semibold mb-4">Producto</h4>
-            <ul className="space-y-2">
-              {footerLinks.producto.map((link, index) => (
-                <li key={index}>
-                  <a
-                    href={link.href}
-                    className="text-neutral-400 hover:text-white transition-colors"
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
+          {productLinks.length > 0 && (
+            <div>
+              <h4 className="text-primary-600 font-semibold mb-4">Producto</h4>
+              <ul className="space-y-2">
+                {productLinks.map((link, index) => (
+                  <li key={index}>
+                    <a
+                      href={link.href}
+                      className="text-neutral-400 hover:text-white transition-colors"
+                    >
+                      {link.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
 
           {/* Company Links */}
-          <div>
-            <h4 className="text-primary-600 font-semibold mb-4">Empresa</h4>
-            <ul className="space-y-2">
-              {footerLinks.empresa.map((link, index) => (
-                <li key={index}>
-                  <a
-                    href={link.href}
-                    className="text-neutral-400 hover:text-white transition-colors"
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
+          {companyLinks.length > 0 && (
+            <div>
+              <h4 className="text-primary-600 font-semibold mb-4">Empresa</h4>
+              <ul className="space-y-2">
+                {companyLinks.map((link, index) => (
+                  <li key={index}>
+                    <a
+                      href={link.href}
+                      className="text-neutral-400 hover:text-white transition-colors"
+                    >
+                      {link.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
 
           {/* Legal Links */}
-          <div>
-            <h4 className="text-primary-600 font-semibold mb-4">Legal</h4>
-            <ul className="space-y-2">
-              {footerLinks.legal.map((link, index) => (
-                <li key={index}>
-                  <a
-                    href={link.href}
-                    className="text-neutral-400 hover:text-white transition-colors"
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
+          {legalLinks.length > 0 && (
+            <div>
+              <h4 className="text-primary-600 font-semibold mb-4">Legal</h4>
+              <ul className="space-y-2">
+                {legalLinks.map((link, index) => (
+                  <li key={index}>
+                    <a
+                      href={link.href}
+                      className="text-neutral-400 hover:text-white transition-colors"
+                    >
+                      {link.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
         </div>
 
         {/* Bottom Bar */}
@@ -131,22 +142,7 @@ const Footer = () => {
               © {new Date().getFullYear()} Seguimiento Ambiental. Todos los
               derechos reservados.
             </p>
-            <div className="flex items-center gap-4">
-              <a
-                href="#"
-                className="text-neutral-400 hover:text-white transition-colors"
-                aria-label="LinkedIn"
-              >
-                <Linkedin className="w-5 h-5" />
-              </a>
-              <a
-                href="#"
-                className="text-neutral-400 hover:text-white transition-colors"
-                aria-label="Twitter"
-              >
-                <Twitter className="w-5 h-5" />
-              </a>
-            </div>
+            <div />
           </div>
         </div>
       </div>
