@@ -127,7 +127,7 @@ const Features = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-neutral-900 mb-4">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-primary-600 mb-4">
             Nuestros{' '}
             <span className="bg-gradient-to-r from-primary-600 to-accent-600 bg-clip-text text-transparent">
               Servicios
@@ -166,7 +166,7 @@ const Features = () => {
 
                 {/* Content - 60% (3/5 columns) */}
                 <div className="col-span-3">
-                  <h3 className="text-xl font-semibold text-neutral-900 mb-3">
+                  <h3 className="text-xl font-semibold text-primary-600 mb-3">
                     {feature.title}
                   </h3>
                   <p className="text-neutral-600 leading-relaxed text-sm">
@@ -180,7 +180,7 @@ const Features = () => {
 
         {/* Desarrollo de Proyectos de Ingeniería */}
         <div className="mt-16">
-          <h3 className="text-2xl sm:text-3xl font-bold text-neutral-900 mb-6 text-center">
+          <h3 className="text-2xl sm:text-3xl font-bold text-primary-600 mb-6 text-center">
             Desarrollo de Proyectos de Ingeniería
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -189,7 +189,7 @@ const Features = () => {
                 key={index}
                 className="p-6 bg-neutral-50 rounded-xl border border-neutral-200"
               >
-                <h4 className="text-lg font-semibold text-neutral-900 mb-2">
+                <h4 className="text-lg font-semibold text-primary-600 mb-2">
                   {block.title}
                 </h4>
                 <p className="text-neutral-600 leading-relaxed text-sm">

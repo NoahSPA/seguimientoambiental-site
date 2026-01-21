@@ -32,7 +32,7 @@ const Hero = () => {
           {/* Content Column */}
           <div className="text-center lg:text-left animate-fade-in">
           {/* Main Heading */}
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-neutral-900 mb-6 text-balance animate-slide-up">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-primary-600 mb-6 text-balance animate-slide-up">
             Seguimiento Ambiental{' '}
             <span className="bg-gradient-to-r from-primary-600 to-accent-600 bg-clip-text text-transparent">
               Multidisciplinario
