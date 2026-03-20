@@ -4,9 +4,8 @@ const nextConfig = {
   images: {
     unoptimized: true, // Para Netlify (sitio estático)
   },
-  output: 'export', // Para generar sitio estático
+  output: 'export',
   trailingSlash: true,
-  distDir: 'out', // Carpeta de salida para Netlify
 }
 
 module.exports = nextConfig
